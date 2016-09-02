@@ -1,0 +1,14 @@
+{% extends "mbd_template/base.html" %}
+{% load cms_tags menu_tags sekizai_tags staticfiles analytical %}
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% block content %}
+    {% include "mbd_template/partials/header.html" %}
+
+    <section id="main" >
+        <div class="container">
+           {% placeholder "content" %}
+        </div><!--/.container-->
+    </section><!--/#feature-->
+
+    {% include "mbd_template/partials/footer.html" %}
+{% endblock content %}

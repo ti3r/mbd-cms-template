@@ -1,0 +1,28 @@
+{% load i18n cms_tags %}
+<div class="col-md-4 col-sm-6 {%if instance.offset%}col-md-offset-{{instance.offset}}{%endif    %}">
+    <div class="single-profile-{%if instance.point_up%}bottom{%else%}top{%endif%} wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
+        <div class="media">
+            <div class="pull-left">
+                <a href="#"><img class="media-object img-responsive" style="max-width:120px; max-height: 120px;" src="{{instance.picture.url}}" alt=""></a>
+            </div>
+
+            <div class="media-body">
+                <h4>{{instance.name}}</h4>
+                <h5>{{instance.title}}</h5>
+                <ul class="tag clearfix">
+                    <li class="btn" style="display: block;visibility: hidden;"><a href="#">Web</a></li>
+                    <!--<li class="btn" style="display: block;visibility: hidden;"><a href="#">Ui</a></li>-->
+                    <!--<li class="btn" style="display: block;visibility: hidden;"><a href="#">Ux</a></li>-->
+                    <!--<li class="btn" style="display: block;visibility: hidden;"><a href="#">Photoshop</a></li>-->
+                </ul>
+                <ul class="social_icons">
+                    {% for plugin in instance.child_plugin_instances %}
+                        {% render_plugin plugin %}
+                    {% endfor %}
+                </ul>
+            </div>
+            <p>{{instance.bio}}</p>
+        </div><!--/.media -->
+        <p></p>
+    </div>
+</div>

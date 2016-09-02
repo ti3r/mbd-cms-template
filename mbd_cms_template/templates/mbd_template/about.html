@@ -1,0 +1,37 @@
+{% extends "mbd_template/base.html" %}
+{% load cms_tags menu_tags sekizai_tags staticfiles analytical %}
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% block content %}
+{% include "mbd_template/partials/header.html" %}
+
+<section id="about-us">
+    <div class="container">
+        <div class="center wow fadeInDown">
+            <h2>{% placeholder "about_header" %}</h2>
+            <p class="lead">{% placeholder "about_caption" %}</p>
+        </div>
+    </div>
+</section>
+
+<section id="board-members">
+    <div class="container">
+        <div class="team">
+            <div class="center wow fadeInDown">
+                <h2>{% placeholder "board_header" %}</h2>
+            </div>
+
+            <div class="row clearfix">
+                {% placeholder "board_team_row1 %}
+            </div>
+
+            {% placeholder "board_team_bar %}
+
+            <div class="row clearfix">
+                {% placeholder "board_team_row2 %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% include "mbd_template/partials/footer.html" %}
+{% endblock content %}

@@ -1,0 +1,31 @@
+<div class="row team-bar">
+    <div class="first-one-arrow hidden-xs">
+        <hr>
+    </div>
+    {% with sections=instance.get_range w=instance.get_width %}
+    {% for i in sections %}
+    {% if i == 0%}
+    <div class="first-arrow hidden-xs" style="width: {{w}}%">
+        <hr>
+        <i class="fa fa-angle-up"></i>
+    </div>
+    {% elif i == 1 %}
+    <div class="second-arrow hidden-xs" style="width: {{w}}%">
+        <hr>
+        <i class="fa fa-angle-down"></i>
+    </div>
+    {% elif i == 2 %}
+    <div class="third-arrow hidden-xs" style="width: {{w}}%">
+        <hr>
+        <i class="fa fa-angle-up"></i>
+    </div>
+    {% elif i == 3 %}
+    <div class="fourth-arrow hidden-xs" style="width: {{w}}%">
+        <hr>
+        <i class="fa fa-angle-down"></i>
+        {% endif %}
+        {% endfor %}
+        {% endwith %}
+
+    </div>
+</div>

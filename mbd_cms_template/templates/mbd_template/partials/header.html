@@ -1,0 +1,26 @@
+{% load cms_tags menu_tags i18n staticfiles %}
+<header id="header">
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6 col-xs-4">
+                    <a class="navbar-brand" href="/">
+                        <img class="img-responsive" style="max-width: 120px;" src="{% static 'mbd_template/images/mbd_logo2.png' %}" alt="logo">
+                    </a>
+                    <!--<div class="top-number"><p><i class="fa fa-phone-square"></i>+1 612-810-9998</p></div>-->
+                </div>
+                <div class="col-sm-6 col-xs-8">
+                    <div class="social">
+                        <ul class="social-share">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% show_menu 0 100 0 100 "mbd_template/partials/menu.html" %}
+</header>

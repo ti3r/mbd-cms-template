@@ -1,0 +1,47 @@
+<!doctype html>
+{% load cms_tags menu_tags sekizai_tags staticfiles analytical %}
+<html>
+    <head>
+        <title>{% block title %}This is my new project home page{% endblock title %}</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta charset="utf-8">
+        <meta name="author" content="Alexandro Blanco <alex@aait.tech>">
+        <meta name="description" content="{% page_attribute 'meta_description' %}" >
+
+        <link rel="stylesheet" href="{% static 'aldryn_bootstrap3/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'aldryn_bootstrap3/css/bootstrap-iconpicker.min.css' %}">
+        <link rel="stylesheet" href="{% static 'aldryn_bootstrap3/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'aldryn_bootstrap3/css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'mbd_template/css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'mbd_template/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'mbd_template/css/prettyPhoto.css' %}">
+        <link rel="stylesheet" href="{% static 'mbd_template/css/responsive.css' %}">
+        <link rel="stylesheet" href="{% static 'mbd_template/css/calendar.min.css' %}">
+
+        {% analytical_head_top %}
+
+        {% render_block "css" %}
+
+        {% analytical_head_bottom %}
+    </head>
+    <body class="homepage">
+        {% cms_toolbar %}
+        {% analytical_body_top %}
+        {% block content %}{% endblock content %}
+        <script src="{% static 'aldryn_bootstrap3/js/jquery.min.js' %}"></script>
+        <script src="{% static 'aldryn_bootstrap3/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'aldryn_bootstrap3/js/iconset/iconset-glyphicon.min.js' %}"></script>
+        <script src="{% static 'aldryn_bootstrap3/js/iconset/iconset-fontawesome-4.2.0.min.js' %}"></script>
+        <script src="{% static 'aldryn_bootstrap3/js/bootstrap-iconpicker.min.js' %}"></script>
+        <script src="{% static 'aldryn_bootstrap3/js/base.js' %}"></script>
+        <script src="{% static 'mbd_template/js/jquery.isotope.min.js' %}"></script>
+        <script src="{% static 'mbd_template/js/html5shiv.js' %}"></script>
+        <script src="{% static 'mbd_template/js/jquery.prettyPhoto.js' %}"></script>
+        <script src="{% static 'mbd_template/js/respond.min.js' %}"></script>
+        <script src="{% static 'mbd_template/js/wow.min.js' %}"></script>
+        <script src="{% static 'mbd_template/js/main.js' %}"></script>
+        <script src="{% static 'mbd_template/js/calendar.min.css' %}"></script>
+        {% render_block "js" %}
+        {% analytical_body_bottom %}
+    </body>
+</html>
