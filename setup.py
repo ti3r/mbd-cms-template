@@ -17,7 +17,7 @@ setup(
     license = "MIT",
     keywords = "MDB django djangocms template plugins",
     url = "https://github.com/ti3r/mbd-cms-template.git",
-    packages=['mbd_cms_template', 'tests'],
+    packages=['mbd_cms_template'],
     long_description='Template for the Minneapolis Ballet Dancers organization',
     classifiers=[
     ],
