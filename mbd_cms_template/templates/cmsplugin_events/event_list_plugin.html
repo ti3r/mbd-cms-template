@@ -1,0 +1,18 @@
+{% load i18n %}
+<div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <h4>{{instance.title}}</h4>
+        <div class="list-group">
+            {% for object in object_list %}
+            <a class="list-group-item" href="{{object.get_absolute_url}}">{{object.title}}
+                <time datetime="{{object.event_start}}">{{object.event_start}}{% if object.event_end %} -
+                    {{object.event_end}}
+                </time>
+            </a>
+            {% endif %}
+            {% empty %}
+            <li>{% trans "No coming events" %}</li>
+            {% endfor %}
+        </div>
+    </div>
+</div>

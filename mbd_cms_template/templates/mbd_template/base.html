@@ -16,7 +16,6 @@
         <link rel="stylesheet" href="{% static 'mbd_template/css/main.css' %}">
         <link rel="stylesheet" href="{% static 'mbd_template/css/prettyPhoto.css' %}">
         <link rel="stylesheet" href="{% static 'mbd_template/css/responsive.css' %}">
-        <link rel="stylesheet" href="{% static 'mbd_template/css/calendar.min.css' %}">
 
         {% analytical_head_top %}
 
@@ -25,6 +24,9 @@
         {% analytical_head_bottom %}
     </head>
     <body class="homepage">
+
+        <div id="calendar"></div>
+
         {% cms_toolbar %}
         {% analytical_body_top %}
         {% block content %}{% endblock content %}
@@ -40,7 +42,7 @@
         <script src="{% static 'mbd_template/js/respond.min.js' %}"></script>
         <script src="{% static 'mbd_template/js/wow.min.js' %}"></script>
         <script src="{% static 'mbd_template/js/main.js' %}"></script>
-        <script src="{% static 'mbd_template/js/calendar.min.css' %}"></script>
+
         {% render_block "js" %}
         {% analytical_body_bottom %}
     </body>

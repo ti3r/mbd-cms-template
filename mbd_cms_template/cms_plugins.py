@@ -29,6 +29,10 @@ class MBDAboutBoardMemberSocialIconsPlugin(CMSPluginBase):
     parent_classes = ['MBDAboutBoardMemberCardPlugin']
     allow_children = False
 
+    fieldsets = ((None, {'fields': ('facebook', 'twitter', 'instagram')})
+                 , ('More', {'classes': ('collapse',), 'fields': ('google_plus', 'youtube', 'pinterest')})
+                 )
+
 
 class MBDAboutBoardMemberCardPlugin(CMSPluginBase):
     """
@@ -42,6 +46,7 @@ class MBDAboutBoardMemberCardPlugin(CMSPluginBase):
     child_classes = ['MBDAboutBoardMemberSocialIconsPlugin']
     module = "MBD"
 
+
 class MBDDancerBadge(CMSPluginBase):
     """
     DJANGO CMS Plugin to display the picture and a small caption about a dancer
@@ -53,7 +58,21 @@ class MBDDancerBadge(CMSPluginBase):
     module = "MBD"
     allow_children = False
 
+
+class MBDDancerPicturePlugin(CMSPluginBase):
+    """
+    DJANGO CMS Plugin to display a dancer picture and a small bio with a background when the picture is hovered
+    """
+    model = models.MBDancerPicture
+    name = _("MBD Dancer Picture")
+    render_template = "mbd_template/plugins/dancerpicture.html"
+    cache = True
+    module = "MBD"
+    allow_children = False
+
+
 plugin_pool.register_plugin(MBDAboutTeamBarPlugin)
 plugin_pool.register_plugin(MBDAboutBoardMemberCardPlugin)
 plugin_pool.register_plugin(MBDAboutBoardMemberSocialIconsPlugin)
 plugin_pool.register_plugin(MBDDancerBadge)
+plugin_pool.register_plugin(MBDDancerPicturePlugin)

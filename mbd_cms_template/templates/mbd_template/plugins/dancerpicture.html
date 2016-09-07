@@ -1,0 +1,14 @@
+{% load staticfiles %}
+<div class="col-xs-12 col-sm-4 col-md-3">
+    <div class="recent-work-wrap">
+        <img class="img-responsive" src="{{instance.picture.url}}" alt="">
+        <div class="overlay">
+            <div class="recent-work-inner">
+                <h3><a href="{{instance.link_page.get_absolute_url}}">{{instance.name}}</a></h3>
+                <p>{{instance.small_bio}}</p>
+                <a class="preview" href="{{instance.link_page.get_absolute_url}}"><i class="fa fa-eye"></i>
+                    View</a>
+            </div>
+        </div>
+    </div>
+</div>

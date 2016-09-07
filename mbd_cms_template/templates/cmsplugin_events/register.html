@@ -1,0 +1,42 @@
+{% load i18n %}
+<div class="row" data-cmsplugin-events="event-registration">
+    <div class="col-xs-12 col-md-8 col-md-offset-2">
+        <h3>{{instance.title}}</h3>
+    </div>
+    <div class="row">
+        {% if submitted %}
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <div class="alert alert-success" role="alert">
+                {{instance.message}}
+            </div>
+        </div>
+    {% else %}
+        <div class="col-xs-12 col-md-8 col-md-offset-2">
+            <form action="#" method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="event">{% trans 'Event' %}</label>
+                    <select class="form-control" name="event" id="event">
+                        {% for e in events %}
+                        <option value="{{e.id}}">{{e.title}} - {{e.event_start}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="name">{% trans 'Name' %}</label>
+                    <input class="form-control" name="name" id="name" type="text"/>
+                </div>
+                <div class="input-group">
+                    <label for="name">{% trans 'Email' %}</label>
+                    <input class="form-control" name="email" id="email" type="email"/>
+                </div>
+                <div class="input-group">
+                    <button class="btn btn-primary" name="cmsplugin_events_register_{{ instance.id }}" type="submit">
+                        {{instance.send_message}}
+                    </button>
+                </div>
+            </form>
+        </div>
+    {% endif %}
+    </div>
+</div>
