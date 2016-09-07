@@ -18,7 +18,7 @@ setup(
     keywords = "MDB django djangocms template plugins",
     url = "https://github.com/ti3r/mbd-cms-template.git",
     packages=['mbd_cms_template', 'tests'],
-    long_description=read('README'),
+    long_description='Template for the Minneapolis Ballet Dancers organization',
     classifiers=[
     ],
 )
