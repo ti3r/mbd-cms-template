@@ -82,5 +82,87 @@ class MBDancerPicture(CMSPlugin):
                             verbose_name=_("Name"), max_length=60)
     small_bio = models.CharField(null=False, blank=False, help_text=_("Small text that will appear when hover"),
                                  verbose_name=_("Small Bio"), max_length=60)
-    link_page = cms.models.fields.PageField(verbose_name=_("Link"),blank=False,null=True,
-                                                   help_text=_("Url to visit when read more is selected"))
+    link_page = cms.models.fields.PageField(verbose_name=_("Link"), blank=False, null=True,
+                                            help_text=_("Url to visit when read more is selected"))
+
+
+class MBDTwoPicCarousel(CMSPlugin):
+    """
+    Plugin in model to store information for the MBDTwoPicCarouselPlugin
+    """
+    slide1_background = FilerImageField(null=True, blank=True, default=None, verbose_name=_("Slide 1 Main Picture"),
+                                        on_delete=models.SET_NULL, related_name="slide1_background",
+                                        help_text=_("Picture for slide 1 background"))
+    slide1_foreground = FilerImageField(null=True, blank=True, default=None,
+                                        verbose_name=_("Slide 1 Foreground Picture"),
+                                        on_delete=models.SET_NULL, related_name="slide1_foreground",
+                                        help_text=_("Picture for slide 1 foreground"))
+    slide1_header = models.CharField(null=True, blank=True, help_text=_("Header text that will appear in slide 1"),
+                                     verbose_name=_("Slide 1 Header"), max_length=60)
+    slide1_caption = models.CharField(null=True, blank=True,
+                                      help_text=_("Caption text that will appear in slide 1 below header"),
+                                      verbose_name=_("Slide 1 Header"), max_length=120)
+    slide1_button_text = models.CharField(null=True, blank=True,
+                                          help_text=_(
+                                              "Text to show in a button below the caption of the slide if wanted"),
+                                          verbose_name=_("Slide 1 Button Text"), max_length=25)
+    slide1_button_link = cms.models.fields.PageField(null=True, blank=True, related_name="slide1_button_link",
+                                                     help_text=_("Page to visit once the button is clicked"),
+                                                     verbose_name=_("Slide 1 Button Link"))
+    slide2_background = FilerImageField(null=True, blank=True, default=None, verbose_name=_("Slide 2 Main Picture"),
+                                        on_delete=models.SET_NULL, related_name="slide2_background",
+                                        help_text=_("Picture for slide 2 background"))
+    slide2_foreground = FilerImageField(null=True, blank=True, default=None,
+                                        verbose_name=_("Slide 2 Foreground Picture"),
+                                        on_delete=models.SET_NULL, related_name="slide2_foreground",
+                                        help_text=_("Picture for slide 2 foreground"))
+    slide2_header = models.CharField(null=True, blank=True, help_text=_("Header text that will appear in slide 2"),
+                                     verbose_name=_("Slide 2 Header"), max_length=60)
+    slide2_caption = models.CharField(null=True, blank=True,
+                                      help_text=_("Caption text that will appear in slide 2 below header"),
+                                      verbose_name=_("Slide 2 Header"), max_length=120)
+    slide2_button_text = models.CharField(null=True, blank=True,
+                                          help_text=_(
+                                              "Text to show in a button below the caption of the slide if wanted"),
+                                          verbose_name=_("Slide 2 Button Text"), max_length=25)
+    slide2_button_link = cms.models.fields.PageField(null=True, blank=True, related_name="slide2_button_link",
+                                                     help_text=_("Page to visit once the button is clicked"),
+                                                     verbose_name=_("Slide 2 Button Link"))
+    slide3_background = FilerImageField(null=True, blank=True, default=None, verbose_name=_("Slide 3 Main Picture"),
+                                        on_delete=models.SET_NULL, related_name="slide3_background",
+                                        help_text=_("Picture for slide 3 background"))
+    slide3_foreground = FilerImageField(null=True, blank=True, default=None,
+                                        verbose_name=_("Slide 3 Foreground Picture"),
+                                        on_delete=models.SET_NULL, related_name="slide3_foreground",
+                                        help_text=_("Picture for slide 3 foreground"))
+    slide3_header = models.CharField(null=True, blank=True, help_text=_("Header text that will appear in slide 3"),
+                                     verbose_name=_("Slide 3 Header"), max_length=60)
+    slide3_caption = models.CharField(null=True, blank=True,
+                                      help_text=_("Caption text that will appear in slide 3 below header"),
+                                      verbose_name=_("Slide 3 Header"), max_length=120)
+    slide3_button_text = models.CharField(null=True, blank=True,
+                                          help_text=_(
+                                              "Text to show in a button below the caption of the slide if wanted"),
+                                          verbose_name=_("Slide 1 Button Text"), max_length=25)
+    slide3_button_link = cms.models.fields.PageField(null=True, blank=True, related_name="slide3_button_link",
+                                                     help_text=_("Page to visit once the button is clicked"),
+                                                     verbose_name=_("Slide 3 Button Link"))
+    slide4_background = FilerImageField(null=True, blank=True, default=None, verbose_name=_("Slide 4 Main Picture"),
+                                        on_delete=models.SET_NULL, related_name="slide4_background",
+                                        help_text=_("Picture for slide 4 background"))
+    slide4_foreground = FilerImageField(null=True, default=None, blank=True,
+                                        verbose_name=_("Slide 4 Foreground Picture"),
+                                        on_delete=models.SET_NULL, related_name="slide4_foreground",
+                                        help_text=_("Picture for slide 4 foreground"))
+    slide4_header = models.CharField(null=True, blank=True, help_text=_("Header text that will appear in slide 4"),
+                                     verbose_name=_("Slide 4 Header"), max_length=60)
+    slide4_caption = models.CharField(null=True, blank=True,
+                                      help_text=_("Caption text that will appear in slide 4 below header"),
+                                      verbose_name=_("Slide 4 Header"), max_length=120)
+    slide4_button_text = models.CharField(null=True, blank=True,
+                                          help_text=_(
+                                              "Text to show in a button below the caption of the slide if wanted"),
+                                          verbose_name=_("Slide 4 Button Text"), max_length=25)
+    slide4_button_link = cms.models.fields.PageField(null=True, blank=True, related_name="slide4_button_link",
+                                                     help_text=_("Page to visit once the button is clicked"),
+                                                     verbose_name=_("Slide 4 Button Link"))

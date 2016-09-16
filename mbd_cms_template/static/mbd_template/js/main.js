@@ -2,7 +2,8 @@ jQuery(function($) {'use strict',
 
 	//#main-slider
 	$(function(){
-		$('#main-slider.carousel').carousel({
+		var slider = $('#main-slider.carousel');
+		$(slider).carousel({
 			interval: 8000
 		});
 	});

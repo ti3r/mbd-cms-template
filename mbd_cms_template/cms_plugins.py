@@ -71,8 +71,22 @@ class MBDDancerPicturePlugin(CMSPluginBase):
     allow_children = False
 
 
+class MBDTwoPicCarouselPlugin(CMSPluginBase):
+    """
+    DJANGO CMS plugin to display an animated carousel with two pictures
+    """
+    model = models.MBDTwoPicCarousel
+    name = _("MBD Carousel")
+    render_template = "mbd_template/plugins/twopiccarousel.html"
+    cache = False
+    module = "MBD"
+    allow_children = False
+
+
+
 plugin_pool.register_plugin(MBDAboutTeamBarPlugin)
 plugin_pool.register_plugin(MBDAboutBoardMemberCardPlugin)
 plugin_pool.register_plugin(MBDAboutBoardMemberSocialIconsPlugin)
 plugin_pool.register_plugin(MBDDancerBadge)
 plugin_pool.register_plugin(MBDDancerPicturePlugin)
+plugin_pool.register_plugin(MBDTwoPicCarouselPlugin)

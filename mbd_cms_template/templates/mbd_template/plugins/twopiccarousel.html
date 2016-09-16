@@ -1,0 +1,149 @@
+{% load cms_tags staticfiles %}
+<div id="mbd-carousel{{instance}}" class="carousel slide">
+    <ol class="carousel-indicators">
+        {% if instance.slide1_background %}
+        <li data-target="#main-slider" data-slide-to="0" class="active"></li>
+        {% endif %}
+        {% if instance.slide2_background %}
+        <li data-target="#main-slider" data-slide-to="1"></li>
+        {% endif %}
+        {% if instance.slide3_background %}
+        <li data-target="#main-slider" data-slide-to="2" ></li>
+        {% endif %}
+        {% if instance.slide4_background %}
+        <li data-target="#main-slider" data-slide-to="3" ></li>
+        {% endif %}
+    </ol>
+    <div class="carousel-inner">
+        {% if instance.slide1_background %}
+        <div class="item active"
+             style="background-image: url('{{instance.slide1_background.url}}')">
+            <div class="container">
+                <div class="row slide-margin">
+                    <div class="col-sm-6">
+                        <div class="carousel-content">
+                            <h1 class="animation animated-item-1">
+                                {{instance.slide1_header | safe}}
+                            </h1>
+                            <h2 class="animation animated-item-2">
+                                {{instance.slide1_caption | safe}}
+                            </h2>
+                            {% if instance.slide1_button_text %}
+                            <a class="btn-slide animation animated-item-3" href="{{instance.slide1_button_link}}">
+                                {{instance.slide1_button_text | safe}}
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 hidden-xs animation animated-item-4">
+                        <div class="slider-img">
+                            <img src="{{instance.slide1_foreground.url}}" class="img-responsive">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div><!--/.item-->
+        {% endif %}
+        {% if instance.slide2_background %}
+        <div class="item"
+             style="background-image: url('{{instance.slide2_background.url}}')">
+            <div class="container">
+                <div class="row slide-margin">
+                    <div class="col-sm-6">
+                        <div class="carousel-content">
+                            <h1 class="animation animated-item-1">
+                                {{instance.slide2_header | safe}}
+                            </h1>
+                            <h2 class="animation animated-item-2">
+                                {{instance.slide2_caption | safe}}
+                            </h2>
+                            {% if instance.slide2_button_text %}
+                            <a class="btn-slide animation animated-item-3" href="{{instance.slide2_button_link}}">
+                                {{instance.slide2_button_tex | safe}}
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 hidden-xs animation animated-item-4">
+                        <div class="slider-img">
+                            <img src="{{instance.slide2_foreground.url}}" class="img-responsive">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div><!--/.item-->
+        {% endif %}
+        {% if instance.slide3_background %}
+        <div class="item"
+             style="background-image: url('{{instance.slide3_background.url}}')">
+            <div class="container">
+                <div class="row slide-margin">
+                    <div class="col-sm-6">
+                        <div class="carousel-content">
+                            <h1 class="animation animated-item-1">
+                                {{instance.slide3_header | safe}}
+                            </h1>
+                            <h2 class="animation animated-item-2">
+                                {{instance.slide3_caption | safe}}
+                            </h2>
+                            {% if instance.slide3_button_text %}
+                            <a class="btn-slide animation animated-item-3" href="{{instance.slide3_button_link}}">
+                                {{instance.slide3_button_text | safe}}
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 hidden-xs animation animated-item-4">
+                        <div class="slider-img">
+                            <img src="{{instance.slide3_foreground.url}}" class="img-responsive">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div><!--/.item-->
+        {% endif %}
+        {% if instance.slide4_background %}
+        <div class="item "
+             style="background-image: url('{{instance.slide4_background.url}}')">
+            <div class="container">
+                <div class="row slide-margin">
+                    <div class="col-sm-6">
+                        <div class="carousel-content">
+                            <h1 class="animation animated-item-1">
+                                {{instance.slide4_header | safe}}
+                            </h1>
+                            <h2 class="animation animated-item-2">
+                                {{instance.slide4_caption | safe}}
+                            </h2>
+                            {% if instance.slide1_button_text %}
+                            <a class="btn-slide animation animated-item-3" href="{{instance.slide4_button_link}}">
+                                {{instance.slide4_button_text | safe}}
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 hidden-xs animation animated-item-4">
+                        <div class="slider-img">
+                            <img src="{{instance.slide4_foreground.url}}" class="img-responsive">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div><!--/.item-->
+        {% endif %}a
+    </div><!--/.carousel-inner-->
+</div><!--/.carousel-->
+<a class="prev hidden-xs" href="#main-slider" data-slide="prev">
+    <i class="fa fa-chevron-left"></i>
+</a>
+<a class="next hidden-xs" href="#main-slider" data-slide="next">
+    <i class="fa fa-chevron-right"></i>
+</a>
