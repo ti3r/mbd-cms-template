@@ -6,6 +6,12 @@ from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext_lazy as _
 
 
+class MDBPluginMixin(CMSPluginBase):
+    module = "MBD"
+
+    class Meta:
+        abstract = True
+
 class MBDAboutTeamBarPlugin(CMSPluginBase):
     """
     DJANGO CMS Plugin to display a team bar
@@ -83,6 +89,11 @@ class MBDTwoPicCarouselPlugin(CMSPluginBase):
     allow_children = False
 
 
+class MBDEventsCalendar(MDBPluginMixin, CMSPluginBase):
+    name = _("MBD Events Calendar")
+    render_template = "mbd_template/plugins/calendar.html"
+    cache = True
+    allow_children = False
 
 plugin_pool.register_plugin(MBDAboutTeamBarPlugin)
 plugin_pool.register_plugin(MBDAboutBoardMemberCardPlugin)

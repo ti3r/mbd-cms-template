@@ -8,42 +8,41 @@
         <meta name="author" content="Alexandro Blanco <alex@aait.tech>">
         <meta name="description" content="{% page_attribute 'meta_description' %}" >
 
-        <link rel="stylesheet" href="{% static 'aldryn_bootstrap3/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'aldryn_bootstrap3/css/bootstrap-iconpicker.min.css' %}">
-        <link rel="stylesheet" href="{% static 'aldryn_bootstrap3/css/font-awesome.min.css' %}">
-        <link rel="stylesheet" href="{% static 'aldryn_bootstrap3/css/base.css' %}">
-        <link rel="stylesheet" href="{% static 'mbd_template/css/animate.min.css' %}">
-        <link rel="stylesheet" href="{% static 'mbd_template/css/main.css' %}">
-        <link rel="stylesheet" href="{% static 'mbd_template/css/prettyPhoto.css' %}">
-        <link rel="stylesheet" href="{% static 'mbd_template/css/responsive.css' %}">
-
-        {% analytical_head_top %}
-
+        {% addtoblock "css" %}<link rel="stylesheet" href="{% static 'aldryn_bootstrap3/css/bootstrap.min.css' %}">{% endaddtoblock %}
+        {% addtoblock "css" %}<link rel="stylesheet" href="{% static 'aldryn_bootstrap3/css/bootstrap-iconpicker.min.css' %}">{% endaddtoblock %}
+        {% addtoblock "css" %}<link rel="stylesheet" href="{% static 'aldryn_bootstrap3/css/font-awesome.min.css' %}">{% endaddtoblock %}
+        {% addtoblock "css" %}<link rel="stylesheet" href="{% static 'aldryn_bootstrap3/css/base.css' %}">{% endaddtoblock %}
+        {% addtoblock "css" %}<link rel="stylesheet" href="{% static 'mbd_template/css/animate.min.css' %}">{% endaddtoblock %}
+        {% addtoblock "css" %}<link rel="stylesheet" href="{% static 'mbd_template/css/main.css' %}">{% endaddtoblock %}
+        {% addtoblock "css" %}<link rel="stylesheet" href="{% static 'mbd_template/css/prettyPhoto.css' %}">{% endaddtoblock %}
+        {% addtoblock "css" %}<link rel="stylesheet" href="{% static 'mbd_template/css/responsive.css' %}">{% endaddtoblock %}
+        {% addtoblock "css" %}<link rel="stylesheet" href="{% static 'mbd_template/css/responsive-calendar.css' %}">{% endaddtoblock %}
         {% render_block "css" %}
 
+        {% addtoblock "js" %}<script src="{% static 'mbd_template/js/jquery.js' %}"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{% static 'mbd_template/js/bootstrap.js' %}"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{% static 'aldryn_bootstrap3/js/iconset/iconset-glyphicon.min.js' %}"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{% static 'aldryn_bootstrap3/js/iconset/iconset-fontawesome-4.2.0.min.js' %}"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{% static 'aldryn_bootstrap3/js/bootstrap-iconpicker.min.js' %}"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{% static 'aldryn_bootstrap3/js/base.js' %}"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{% static 'mbd_template/js/jquery.isotope.min.js' %}"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{% static 'mbd_template/js/html5shiv.js' %}"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{% static 'mbd_template/js/jquery.prettyPhoto.js' %}"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{% static 'mbd_template/js/respond.min.js' %}"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{% static 'mbd_template/js/wow.min.js' %}"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{% static 'mbd_template/js/responsive-calendar.min.js' %}"></script>{% endaddtoblock %}
+        {% addtoblock "js" %}<script src="{% static 'mbd_template/js/main.js' %}"></script>{% endaddtoblock %}
+        {% render_block "js" %}
+
+        {% analytical_head_top %}
         {% analytical_head_bottom %}
+
     </head>
     <body class="homepage">
-
-        <div id="calendar"></div>
-
         {% cms_toolbar %}
         {% analytical_body_top %}
         {% block content %}{% endblock content %}
-        <script src="{% static 'mbd_template/js/jquery.js' %}"></script>
-        <script src="{% static 'mbd_template/js/bootstrap.js' %}"></script>
-        <script src="{% static 'aldryn_bootstrap3/js/iconset/iconset-glyphicon.min.js' %}"></script>
-        <script src="{% static 'aldryn_bootstrap3/js/iconset/iconset-fontawesome-4.2.0.min.js' %}"></script>
-        <script src="{% static 'aldryn_bootstrap3/js/bootstrap-iconpicker.min.js' %}"></script>
-        <script src="{% static 'aldryn_bootstrap3/js/base.js' %}"></script>
-        <script src="{% static 'mbd_template/js/jquery.isotope.min.js' %}"></script>
-        <script src="{% static 'mbd_template/js/html5shiv.js' %}"></script>
-        <script src="{% static 'mbd_template/js/jquery.prettyPhoto.js' %}"></script>
-        <script src="{% static 'mbd_template/js/respond.min.js' %}"></script>
-        <script src="{% static 'mbd_template/js/wow.min.js' %}"></script>
-        <script src="{% static 'mbd_template/js/main.js' %}"></script>
-
-        {% render_block "js" %}
         {% analytical_body_bottom %}
     </body>
+
 </html>

@@ -1,0 +1,55 @@
+{% load sekizai_tags staticfiles i18n %}
+
+<div>
+    <!-- Responsive calendar - START -->
+    <div class="responsive-calendar" id="mbd-cal-{{instance.id}}">
+        <!--<div class="controls">-->
+            <!--<a class="pull-left" data-go="prev">-->
+                <!--<div class="btn btn-primary">Prev</div>-->
+            <!--</a>-->
+            <!--<h4><span data-head-year></span> <span data-head-month></span></h4>-->
+            <!--<a class="pull-right" data-go="next">-->
+                <!--<div class="btn btn-primary">Next</div>-->
+            <!--</a>-->
+        <!--</div>-->
+        <hr/>
+        <div class="day-headers">
+            <div class="day header">{% trans 'Mon' %}</div>
+            <div class="day header">{% trans 'Tue' %}</div>
+            <div class="day header">{% trans 'Wed' %}</div>
+            <div class="day header">{% trans 'Thu' %}</div>
+            <div class="day header">{% trans 'Fri' %}</div>
+            <div class="day header">{% trans 'Sat' %}</div>
+            <div class="day header">{% trans 'Sun' %}</div>
+        </div>
+        <div class="days" data-group="days">
+
+        </div>
+    </div>
+    <script type="text/javascript">
+    $("#mbd-cal-{{instance.id}}").responsiveCalendar({
+          time: '{{year}}-{{month}}'
+          ,onMonthChange: function(params){
+              var month = '11';
+              $.get('events.json?month='+month,function(data){
+                new_events = {}
+                for(i=0; i<data.length; i++){
+                    if (data[i].fields){ //Valid object
+                        key = ""+data[i].fields.event_start.split('T')[0]
+                        url = "/"+month
+                        new_events[key] = url
+                    }
+                }
+                console.info(JSON.stringify(new_events));
+                $("#mbd-cal-{{instance.id}}").events=new_events;
+              });
+          }
+          ,events: {
+            {% for event in events %}
+                "{{event.get_start_iso_date}}": {"url":"#"},
+            {% endfor %}
+          }
+    });
+</script>
+    <!-- Responsive calendar - END -->
+</div>

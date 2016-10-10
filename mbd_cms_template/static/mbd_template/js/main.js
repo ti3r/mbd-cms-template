@@ -67,5 +67,15 @@ jQuery(function($) {'use strict',
 	//Pretty Photo
 	$("a[rel^='prettyPhoto']").prettyPhoto({
 		social_tools: false
-	});	
+	});
+
+    //Responsive calendar
+//    $(".responsive-calendar").responsiveCalendar({
+//          time: '2016-10',
+//          events: {
+//            "2016-10-30": {"number": 5, "url": "http://w3widgets.com/responsive-slider"},
+//            "2016-10-26": {"number": 1, "url": "http://w3widgets.com"},
+//          }
+//    });
+
 });
